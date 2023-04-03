@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    font-size: 30px;
+}
+
+.board {
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.row {
+    
+}
+
+.square {
+    margin: 0 auto;
+    width: 30%;
+    border: 3px solid;
+    display: inline-block;
+    max-height: 200px;
+}
+
+.square:after {
+    content: "";
+    display: inline-block;
+    padding-bottom: 97%;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    background-color: #9098ff;
+    padding: 20px 0;
+    
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 9px;
+    background-color: #f9f50b;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+button:hover {
+    padding: 12px;
+    margin: 6px;
+    background-color: #f6f358;
+    border-width: 4px;
+}
+
+.player1 {
+    background-color: aqua;
+}
+
+.player2 {
+    background-color: brown;
+}
+

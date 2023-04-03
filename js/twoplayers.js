@@ -6,7 +6,7 @@ let player1turn = true;
 
 $("document").ready(function() {
     render();
-
+    
     $("#square00").click(function() {
         twoPlay(0,0);
     });
@@ -39,6 +39,7 @@ $("document").ready(function() {
     $("#playagain").click(function() {
         board.restart();
         render();
+        $(".square").css("pointer-events", "auto");
         $("#gameover").toggle();
     });
 
@@ -93,6 +94,7 @@ const twoPlay = (row, col) => {
         else {
             $("#gameovertext").html(`Player ${board.winner} Wins!`);
         }
+        $(".square").css("pointer-events", "none");
         $("#gameover").toggle();
     }
 

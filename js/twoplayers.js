@@ -91,11 +91,13 @@ const play = (row, col) => {
 
     player1turn = !player1turn;
     render();
+
     if (!player1turn && computer && !board.gameOver) {
         computer.decideMove();
         player1turn = !player1turn;
         render();
     }
+    
     if (board.gameOver) {
         console.log("over");
         //render();

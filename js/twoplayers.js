@@ -3,44 +3,47 @@
 //let player select a square (get player input)
 // loop through until winner
 let player1turn = true;
+let computerPlay = true;
 
 $("document").ready(function() {
     render();
-    
+    console.log("its working");
     $("#square00").click(function() {
-        twoPlay(0,0);
+        play(0,0);
     });
     $("#square01").click(function() {
-    twoPlay(0,1);
+    play(0,1);
     });
     $("#square02").click(function() {
-        twoPlay(0,2);
+        play(0,2);
     });
     $("#square10").click(function() {
-        twoPlay(1,0);
+        play(1,0);
     });
     $("#square11").click(function() {
-    twoPlay(1,1);
+    play(1,1);
     });
     $("#square12").click(function() {
-        twoPlay(1,2);
+        play(1,2);
     });
     $("#square20").click(function() {
-        twoPlay(2,0);
+        play(2,0);
     });
     $("#square21").click(function() {
-        twoPlay(2,1);
+        play(2,1);
     });
     $("#square22").click(function() {
-        twoPlay(2,2);
+        play(2,2);
     });
 
     //gameover button
     $("#playagain").click(function() {
         board.restart();
-        render();
+        
         $(".square").css("pointer-events", "auto");
         $("#gameover").toggle();
+        player1turn = true;
+        render();
     });
 
 });
@@ -75,7 +78,7 @@ const colorSquare = (row, col) => {
     $(`#square${row}${col}`).removeClass("player2");
 }
 
-const twoPlay = (row, col) => {
+const play = (row, col) => {
     if (board[row][col] != 0) {
         return;
     }
@@ -86,8 +89,16 @@ const twoPlay = (row, col) => {
         board.select(row,col,2);
     }
 
-    if (board.gameOver) {
+    player1turn = !player1turn;
+    render();
+    if (!player1turn && computer && !board.gameOver) {
+        computer.decideMove();
+        player1turn = !player1turn;
         render();
+    }
+    if (board.gameOver) {
+        console.log("over");
+        //render();
         if (board.winner === 0) {
             $("#gameovertext").html("Draw");
         }
@@ -97,9 +108,5 @@ const twoPlay = (row, col) => {
         $(".square").css("pointer-events", "none");
         $("#gameover").toggle();
     }
-
-    player1turn = !player1turn;
-    render();
-    
 }
 

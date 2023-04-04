@@ -14,12 +14,13 @@
 }
 
 .row {
-    
+    text-align: center;
 }
 
 .square {
     margin: 0 auto;
     width: 30%;
+    transition: 250ms ease-in-out 20ms;
     border: 3px solid;
     display: inline-block;
     max-height: 200px;
@@ -30,6 +31,10 @@
     content: "";
     display: inline-block;
     padding-bottom: 97%;
+}
+
+.square:hover {
+    width: 31%;
 }
 
 .popup {
@@ -66,6 +71,6 @@ button:hover {
 }
 
 .player2 {
-    background-color: brown;
+    background-color: #fe6e00;
 }
 

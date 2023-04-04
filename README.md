@@ -7,7 +7,5 @@ To play against a player change `computer` to *false* in `twoplayers.js`
 
 **Libraries**
 * Jquery
-* HTML
-* CSS
-* Javascript
+
 

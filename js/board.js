@@ -94,40 +94,40 @@ const board = {
     }
 }
 
-//test
-board.select(0,0,1);
-board.select(0,1,1);
-board.select(0,2,1);
-board.checkWinner();
-board.restart();
-board.select(1,0,1);
-board.select(1,1,1);
-board.select(1,2,1);
-board.checkWinner();
-board.restart();
-board.select(2,0,1);
-board.select(2,1,1);
-board.select(2,2,1);
-board.checkWinner();
-board.restart();
-board.select(0,0,1);
-board.select(1,0,1);
-board.select(2,0,1);
-board.checkWinner();
-board.restart();
-board.select(2,0,1);
-board.select(1,1,1);
-board.select(0,2,1);
-board.checkWinner();
-board.restart();
-board.select(2,2,1);
-board.select(1,1,1);
-board.select(0,0,1);
-board.checkWinner();
-board.restart();
-board.select(2,1,1);
-board.select(1,1,1);
-board.select(0,2,1);
-board.checkWinner();
-board.restart();
+// //test
+// board.select(0,0,1);
+// board.select(0,1,1);
+// board.select(0,2,1);
+// board.checkWinner();
+// board.restart();
+// board.select(1,0,1);
+// board.select(1,1,1);
+// board.select(1,2,1);
+// board.checkWinner();
+// board.restart();
+// board.select(2,0,1);
+// board.select(2,1,1);
+// board.select(2,2,1);
+// board.checkWinner();
+// board.restart();
+// board.select(0,0,1);
+// board.select(1,0,1);
+// board.select(2,0,1);
+// board.checkWinner();
+// board.restart();
+// board.select(2,0,1);
+// board.select(1,1,1);
+// board.select(0,2,1);
+// board.checkWinner();
+// board.restart();
+// board.select(2,2,1);
+// board.select(1,1,1);
+// board.select(0,0,1);
+// board.checkWinner();
+// board.restart();
+// board.select(2,1,1);
+// board.select(1,1,1);
+// board.select(0,2,1);
+// board.checkWinner();
+// board.restart();
 

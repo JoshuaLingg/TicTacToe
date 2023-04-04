@@ -23,6 +23,7 @@
     border: 3px solid;
     display: inline-block;
     max-height: 200px;
+    
 }
 
 .square:after {

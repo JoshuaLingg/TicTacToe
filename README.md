@@ -9,3 +9,9 @@ To play against a player change `computerPlay` to *false* in `twoplayers.js`
 * Jquery
 
 
+**Acknowledgements**  
+Made by Josh  
+Made For Josh  
+Special Thanks to Josh  
+Made in memory of Josh  
+ 

@@ -3,7 +3,7 @@
 //let player select a square (get player input)
 // loop through until winner
 let player1turn = true;
-let computerPlay = false;
+let computerPlay = true;
 
 $("document").ready(function() {
     render();

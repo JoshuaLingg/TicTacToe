@@ -7,7 +7,6 @@ let computerPlay = true;
 
 $("document").ready(function() {
     render();
-    console.log("its working");
     $("#square00").click(function() {
         play(0,0);
     });
@@ -100,7 +99,6 @@ const play = (row, col) => {
     
     if (board.gameOver) {
         console.log("over");
-        //render();
         if (board.winner === 0) {
             $("#gameovertext").html("Draw");
         }

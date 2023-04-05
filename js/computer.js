@@ -52,62 +52,36 @@ const computer = {
                 return this.playMove(0,0);
             }
         
-        if(boardArr[0] === 2 && boardArr[1] === 2 && boardArr[2] === 0) {
-            return this.playMove(0,2);
-        }
-        if(boardArr[1] === 2 && boardArr[2] === 2 && boardArr[0] === 0) {
-            return this.playMove(0,0);
-        }
-        if(boardArr[3] === 2 && boardArr[4] === 2 && boardArr[5] === 0) {
-            return this.playMove(1,2);
-        }
-        if(boardArr[4] === 2 && boardArr[5] === 2 && boardArr[3] === 0) {
-            return this.playMove(1,0);
-        }
-        if(boardArr[6] === 2 && boardArr[7] === 2 && boardArr[8] === 0) {
-            return this.playMove(2,2);
-        }
-        if(boardArr[7] === 2 && boardArr[8] === 2 && boardArr[6] === 0) {
-            return this.playMove(2,0);
-        }
-        if(boardArr[0] === 2 && boardArr[2] === 2 && boardArr[1] === 0) {
-            return this.playMove(0,1);
-        }
-        if(boardArr[3] === 2 && boardArr[5] === 2 && boardArr[4] === 0) {
-            return this.playMove(1,1);
-        }
-        if(boardArr[6] === 2 && boardArr[8] === 2 && boardArr[7] === 0) {
-            return this.playMove(2,1);
+        //checks for row for computer
+        for (let i = 0; i < 9; i += 3) {
+            if(boardArr[i] === 2 && boardArr[i+1] === 2 && boardArr[i+2] === 0) {   
+                console.log(Math.floor((i+2)/3), (i % 3));
+                return this.playMove(Math.floor((i+2)/3), ((i+2) % 3));
+            }
+            if(boardArr[i+1] === 2 && boardArr[i+2] === 2 && boardArr[i] === 0) {
+                console.log(Math.floor((i+2)/3), (i % 3));
+                return this.playMove(Math.floor((i)/3), (i % 3));
+            }
+            if(boardArr[i] === 2 && boardArr[i+2] === 2 && boardArr[i+1] === 0) {
+                return this.playMove(Math.floor((i+1)/3), ((i+1) % 3));
+            }
         }
         
-        if(boardArr[0] === 2 && boardArr[3] === 2 && boardArr[6] === 0) {
-            return this.playMove(2,0);
-        }
-        if(boardArr[3] === 2 && boardArr[6] === 2 && boardArr[0] === 0) {
-            return this.playMove(0,0);
-        }
-        if(boardArr[1] === 2 && boardArr[4] === 2 && boardArr[7] === 0) {
-            return this.playMove(2,1);
-        }
-        if(boardArr[4] === 2 && boardArr[7] === 2 && boardArr[1] === 0) {
-            return this.playMove(0,1);
-        }
-        if(boardArr[2] === 2 && boardArr[5] === 2 && boardArr[8] === 0) {
-            return this.playMove(2,2);
-        }
-        if(boardArr[5] === 2 && boardArr[8] === 2 && boardArr[2] === 0) {
-            return this.playMove(0,2);
-        }
-        if(boardArr[0] === 2 && boardArr[6] === 2 && boardArr[3] === 0) {
-            return this.playMove(1,0);
-        }
-        if(boardArr[1] === 2 && boardArr[7] === 2 && boardArr[4] === 0) {
-            return this.playMove(1,1);
-        }
-        if(boardArr[2] === 2 && boardArr[8] === 2 && boardArr[5] === 0) {
-            return this.playMove(1,2);
+        //checks for col for computer
+        for (let i = 0; i < 3; i++) {
+            if(boardArr[i] === 2 && boardArr[i+3] === 2 && boardArr[i+6] === 0) {   
+                return this.playMove(Math.floor((i+6)/3), (i % 3));
+            }
+
+            if(boardArr[i+3] === 2 && boardArr[i+6] === 2 && boardArr[i] === 0) {
+                return this.playMove(Math.floor((i)/3), (i % 3));
+            }
+            if(boardArr[i] === 2 && boardArr[i+6] === 2 && boardArr[i+3] === 0) {
+                return this.playMove(Math.floor((i+3)/3), (i % 3));
+            }
         }
         
+        //diagonals for computer
         if(boardArr[0] === 2 && boardArr[4] === 2 && boardArr[8] === 0) {
             return this.playMove(2,2);
         }
@@ -121,63 +95,36 @@ const computer = {
             return this.playMove(0,2);
         }
 
-        //check if 2 in a row for enemy
-        if(boardArr[0] === 1 && boardArr[1] === 1 && boardArr[2] === 0) {
-            return this.playMove(0,2);
-        }
-        if(boardArr[1] === 1 && boardArr[2] === 1 && boardArr[0] === 0) {
-            return this.playMove(0,0);
-        }
-        if(boardArr[3] === 1 && boardArr[4] === 1 && boardArr[5] === 0) {
-            return this.playMove(1,2);
-        }
-        if(boardArr[4] === 1 && boardArr[5] === 1 && boardArr[3] === 0) {
-            return this.playMove(1,0);
-        }
-        if(boardArr[6] === 1 && boardArr[7] === 1 && boardArr[8] === 0) {
-            return this.playMove(2,2);
-        }
-        if(boardArr[7] === 1 && boardArr[8] === 1 && boardArr[6] === 0) {
-            return this.playMove(2,0);
-        }
-        if(boardArr[0] === 1 && boardArr[2] === 1 && boardArr[1] === 0) {
-            return this.playMove(0,1);
-        }
-        if(boardArr[3] === 1 && boardArr[5] === 1 && boardArr[4] === 0) {
-            return this.playMove(1,1);
-        }
-        if(boardArr[6] === 1 && boardArr[8] === 1 && boardArr[7] === 0) {
-            return this.playMove(2,1);
+        //check row for player1
+        for (let i = 0; i < 9; i += 3) {
+            if(boardArr[i] === 1 && boardArr[i+1] === 1 && boardArr[i+2] === 0) {   
+                console.log(Math.floor((i+2)/3), (i % 3));
+                return this.playMove(Math.floor((i+2)/3), ((i+2) % 3));
+            }
+            if(boardArr[i+1] === 1 && boardArr[i+2] === 1 && boardArr[i] === 0) {
+                console.log(Math.floor((i+2)/3), (i % 3));
+                return this.playMove(Math.floor((i)/3), (i % 3));
+            }
+            if(boardArr[i] === 1 && boardArr[i+2] === 1 && boardArr[i+1] === 0) {
+                return this.playMove(Math.floor((i+1)/3), ((i+1) % 3));
+            }
         }
 
-        if(boardArr[0] === 1 && boardArr[3] === 1 && boardArr[6] === 0) {
-            return this.playMove(2,0);
-        }
-        if(boardArr[3] === 1 && boardArr[6] === 1 && boardArr[0] === 0) {
-            return this.playMove(0,0);
-        }
-        if(boardArr[1] === 1 && boardArr[4] === 1 && boardArr[7] === 0) {
-            return this.playMove(2,1);
-        }
-        if(boardArr[4] === 1 && boardArr[7] === 1 && boardArr[1] === 0) {
-            return this.playMove(0,1);
-        }
-        if(boardArr[2] === 1 && boardArr[5] === 1 && boardArr[8] === 0) {
-            return this.playMove(2,2);
-        }
-        if(boardArr[5] === 1 && boardArr[8] === 1 && boardArr[2] === 0) {
-            return this.playMove(0,2);
-        }
-        if(boardArr[0] === 1 && boardArr[6] === 1 && boardArr[3] === 0) {
-            return this.playMove(1,0);
-        }
-        if(boardArr[1] === 1 && boardArr[7] === 1 && boardArr[4] === 0) {
-            return this.playMove(1,1);
-        }
-        if(boardArr[2] === 1 && boardArr[8] === 1 && boardArr[5] === 0) {
-            return this.playMove(1,2);
+        //check for col for player1
+        for (let i = 0; i < 3; i++) {
+            if(boardArr[i] === 1 && boardArr[i+3] === 1 && boardArr[i+6] === 0) {   
+                return this.playMove(Math.floor((i+6)/3), (i % 3));
+            }
+
+            if(boardArr[i+3] === 1 && boardArr[i+6] === 1 && boardArr[i] === 0) {
+                return this.playMove(Math.floor((i)/3), (i % 3));
+            }
+            if(boardArr[i] === 1 && boardArr[i+6] === 1 && boardArr[i+3] === 0) {
+                return this.playMove(Math.floor((i+3)/3), (i % 3));
+            }
         }
 
+        //diagonals for player1
         if(boardArr[0] === 1 && boardArr[4] === 1 && boardArr[8] === 0) {
             return this.playMove(2,2);
         }

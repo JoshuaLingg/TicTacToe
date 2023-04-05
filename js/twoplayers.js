@@ -3,7 +3,7 @@
 //let player select a square (get player input)
 // loop through until winner
 let player1turn = true;
-let computerPlay = true;
+let computerPlay = false;
 
 $("document").ready(function() {
     render();
@@ -92,7 +92,7 @@ const play = (row, col) => {
     player1turn = !player1turn;
     render();
 
-    if (!player1turn && computer && !board.gameOver) {
+    if (!player1turn && computerPlay && !board.gameOver) {
         computer.decideMove();
         player1turn = !player1turn;
         render();

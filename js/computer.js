@@ -13,11 +13,10 @@ let emptySpaceArr = [];
 const computer = { 
     playMove: function(row, col) {
         board.select(row, col, 2);
-        //render();
     },
 
     getBoard: function() {
-        boardArr = [];
+        boardArr = []; // im so dumb could have made a 3x3 ...oh well
         boardPosStr = "";
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
@@ -49,17 +48,27 @@ const computer = {
             }
         if (boardPosStr === "000010000")
             {
-                return this.playMove(0,0);
+                const randCorner = Math.floor(Math.random()*4);
+                if (randCorner === 0) {
+                    return this.playMove(0,0);
+                }
+                if (randCorner === 1) {
+                    return this.playMove(0,2);
+                }
+                if (randCorner === 2) {
+                    return this.playMove(2,0);
+                }
+                if (randCorner === 3) {
+                    return this.playMove(2,2);
+                }
             }
         
         //checks for row for computer
         for (let i = 0; i < 9; i += 3) {
             if(boardArr[i] === 2 && boardArr[i+1] === 2 && boardArr[i+2] === 0) {   
-                console.log(Math.floor((i+2)/3), (i % 3));
                 return this.playMove(Math.floor((i+2)/3), ((i+2) % 3));
             }
             if(boardArr[i+1] === 2 && boardArr[i+2] === 2 && boardArr[i] === 0) {
-                console.log(Math.floor((i+2)/3), (i % 3));
                 return this.playMove(Math.floor((i)/3), (i % 3));
             }
             if(boardArr[i] === 2 && boardArr[i+2] === 2 && boardArr[i+1] === 0) {
